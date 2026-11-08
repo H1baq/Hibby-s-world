@@ -3,28 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Spill the Tea &amp; Read — a cozy book club</title>
-  <meta name="description" content="Spill the Tea & Read is a cozy, girly book club. November's pick: Letters to Milena by Franz Kafka." />
+  <title>Spill the Tea &amp; Read — an online book club</title>
+  <meta name="description" content="Spill the Tea & Read is a cozy online book club. November's pick: Letters to Milena by Franz Kafka." />
+  <meta name="theme-color" content="#3a0010" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Reenie+Beanie&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ───────── Nav ───────── -->
+  <!-- ───────── Header ───────── -->
   <header class="nav" id="nav">
     <a href="#top" class="nav__logo" aria-label="Spill the Tea and Read, home">
-      <svg class="nav__cup" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 12h18v6a8 8 0 0 1-8 8h-2a8 8 0 0 1-8-8z" fill="currentColor"/><path d="M23 14h2a3 3 0 0 1 0 6h-2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 4c-1 2 1 3 0 5M16 3c-1 2 1 3 0 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      <span>Spill the Tea <i>&amp;</i> Read</span>
+      Spill the Tea <i>&amp;</i> Read
     </a>
-    <nav class="nav__links" id="navLinks">
-      <a href="#pick">November pick</a>
-      <a href="#spill">Spill</a>
-      <a href="#mood">Mood</a>
-      <a href="#join" class="nav__cta">Join the club</a>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="#pick"><small>01</small>The pick</a>
+      <a href="#spill"><small>02</small>Spill</a>
+      <a href="#mood"><small>03</small>The mood</a>
+      <a href="#join" class="menu__join"><small>04</small>Join us</a>
+      <a class="menu__chat" href="https://chat.whatsapp.com/BWk0FZmihGW8D9kCHvEyLG" target="_blank" rel="noopener">open the group chat ↗</a>
     </nav>
-    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
   </header>
 
   <main id="top">
@@ -34,64 +39,70 @@
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="hero__inner">
         <div class="hero__copy">
-          <p class="eyebrow eyebrow--light reveal">A cozy little book club</p>
+          <p class="masthead reveal">vol. 01 <span>—</span> issue nº 11 <span>—</span> november 2026</p>
           <h1 class="hero__title reveal">
             Spill the <em>tea,</em><br />
-            <span>&amp;</span> read.
+            <span class="amp">&amp;</span> read.
           </h1>
           <p class="hero__lede reveal">
             An online book club for girls who want to talk about every single
             feeling. One book a month, a pot of something warm and your softest
-            cardigan. Read from anywhere, then spill with us online.
+            cardigan. Read from anywhere, then spill with us.
           </p>
           <div class="hero__actions reveal">
-            <a href="#pick" class="btn btn--light">This month's read</a>
-            <a href="#join" class="btn btn--outline">Join the club <span aria-hidden="true">♡</span></a>
+            <a href="#join" class="btn btn--blush">join the club</a>
+            <a href="#pick" class="link link--light">this month's read ↓</a>
           </div>
         </div>
 
         <div class="hero__art reveal" style="--d:.15s">
-          <figure class="hero__frame">
+          <figure class="polaroid">
+            <span class="tape tape--l" aria-hidden="true"></span>
+            <span class="tape tape--r" aria-hidden="true"></span>
             <img src="assets/milena-collage.jpg" alt="Vintage collage: glowing moths, a candle on a stack of old books, a teacup, and a painted woman reading in an armchair" />
+            <figcaption>the mood this month ♡</figcaption>
           </figure>
-          <a href="#pick" class="sticker">
-            <span class="sticker__label">November read</span>
-            <span class="sticker__title">Letters to Milena</span>
-            <span class="sticker__author">Franz Kafka</span>
+
+          <a href="#pick" class="stamp" aria-label="November read: Letters to Milena by Franz Kafka">
+            <span class="stamp__inner">
+              <span class="stamp__no">Nº 11</span>
+              <span class="stamp__title">Letters<br />to Milena</span>
+              <span class="stamp__by">F. Kafka · 1920</span>
+            </span>
           </a>
-          <div class="badge" aria-hidden="true">
-            <svg viewBox="0 0 120 120">
-              <defs><path id="ring" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs>
-              <text><textPath href="#ring">spill the tea · and read · spill the tea · and read · </textPath></text>
-            </svg>
-            <span>♡</span>
-          </div>
+
+          <p class="note note--hero" aria-hidden="true">
+            currently crying<br />over this one
+            <svg viewBox="0 0 80 50"><path d="M4 6c18 2 40 10 56 30" /><path d="M48 34l12 3-2-12" /></svg>
+          </p>
         </div>
       </div>
     </section>
-
-    <!-- ───────── Marquee ───────── -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>November</span><i>✉</i><span>Letters to Milena</span><i>♡</i><span>Franz Kafka</span><i>✉</i><span>tea &amp; tissues</span><i>♡</i><span>written kisses</span><i>✉</i><span>Prague · Vienna · 1920</span><i>♡</i>
-        <span>November</span><i>✉</i><span>Letters to Milena</span><i>♡</i><span>Franz Kafka</span><i>✉</i><span>tea &amp; tissues</span><i>♡</i><span>written kisses</span><i>✉</i><span>Prague · Vienna · 1920</span><i>♡</i>
-      </div>
-    </div>
 
     <!-- ───────── November pick ───────── -->
     <section class="section pick" id="pick">
       <div class="pick__grid">
         <div class="pick__visual reveal">
-          <div class="cover" role="img" aria-label="Cover of Letters to Milena by Franz Kafka: a teacup, a pen and a handwritten letter on a wooden table">
-            <img src="assets/milena-notes.jpg" alt="" />
+          <div class="cover-wrap">
+            <span class="tape tape--top" aria-hidden="true"></span>
+            <div class="cover" role="img" aria-label="Cover of Letters to Milena by Franz Kafka: a teacup, a pen and a handwritten letter on a wooden table">
+              <img src="assets/milena-notes.jpg" alt="" />
+            </div>
+            <p class="note note--a" aria-hidden="true">raw &amp;<br />intimate
+              <svg viewBox="0 0 60 40"><path d="M4 8c16 0 34 8 48 24" /><path d="M40 30l12 2-1-12" /></svg>
+            </p>
+            <p class="note note--b" aria-hidden="true">
+              <svg viewBox="0 0 60 40"><path d="M56 8C40 8 22 16 8 32" /><path d="M20 32l-12 0 3-11" /></svg>
+              only his side<br />survived…
+            </p>
+            <p class="note note--c" aria-hidden="true">bring tissues!!</p>
           </div>
-          <p class="pick__script" aria-hidden="true">our November read</p>
         </div>
 
         <div class="pick__copy">
-          <p class="eyebrow reveal">The month's pick · November 2026</p>
+          <p class="label reveal">nº 01 — this month's pick</p>
           <h2 class="reveal">Letters to <em>Milena</em></h2>
-          <p class="pick__meta reveal">Franz Kafka <span>·</span> written 1920–1923 <span>·</span> published 1952</p>
+          <p class="pick__meta reveal">Franz Kafka · written 1920–1923 · published 1952</p>
 
           <div class="pick__about reveal">
             <p class="dropcap">
@@ -115,39 +126,45 @@
             </p>
           </div>
 
-          <ul class="themes reveal" aria-label="Themes">
-            <li>Longing &amp; desire</li>
-            <li>Love &amp; loneliness</li>
-            <li>Guilt</li>
-            <li>Vulnerability</li>
-            <li>Existential thoughts</li>
-          </ul>
-
-          <blockquote class="quote reveal">
-            <p>“Written kisses don't reach their destination; rather, they are drunk on the way by the ghosts.”</p>
-            <cite>Franz Kafka, <em>Letters to Milena</em></cite>
-          </blockquote>
+          <p class="themes reveal">
+            <span>longing</span> / <span>love &amp; loneliness</span> / <span>guilt</span> / <span>vulnerability</span> / <span>existential thoughts</span>
+          </p>
         </div>
       </div>
 
-      <dl class="facts reveal">
-        <div><dt>Vibe</dt><dd>Candlelit &amp; yearning</dd></div>
-        <div><dt>Best paired with</dt><dd>Rose Earl Grey</dd></div>
-        <div><dt>Tissue level</dt><dd><span class="hearts" aria-label="4 out of 5">♥♥♥♥<b>♥</b></span></dd></div>
-        <div><dt>Read it if you love</dt><dd>Diaries, poetry &amp; longing</dd></div>
-      </dl>
+      <div class="pick__extra">
+        <div class="libcard reveal">
+          <p class="libcard__head">spill the tea &amp; read — lending card</p>
+          <dl>
+            <div><dt>vibe</dt><dd>candlelit &amp; yearning</dd></div>
+            <div><dt>pairs with</dt><dd>rose earl grey</dd></div>
+            <div><dt>tissue level</dt><dd><span class="hearts" aria-label="4 out of 5">♥♥♥♥<b>♥</b></span></dd></div>
+            <div><dt>for fans of</dt><dd>diaries, poetry &amp; longing</dd></div>
+          </dl>
+          <p class="libcard__stamp" aria-hidden="true">due back<br /><b>30 nov 2026</b></p>
+        </div>
+
+        <blockquote class="pull reveal" style="--d:.1s">
+          <p>“Written kisses don't reach their destination; rather, they are drunk on the way by the ghosts.”</p>
+          <cite>— Franz Kafka, <em>Letters to Milena</em></cite>
+        </blockquote>
+      </div>
     </section>
 
     <!-- ───────── Spill (discussion) ───────── -->
     <section class="section spill" id="spill">
       <div class="spill__grid">
-        <div>
-          <p class="eyebrow reveal">Spill the tea</p>
-          <h2 class="reveal">Pour yourself a <em>question</em>.</h2>
-          <p class="section__note reveal">Tap the teapot for a discussion prompt. Bring your answer to the WhatsApp chat, or argue about it with us there.</p>
+        <div class="spill__intro">
+          <p class="label reveal">nº 02 — spill the tea</p>
+          <h2 class="reveal">Pour yourself<br />a <em>question</em>.</h2>
+          <p class="section__note reveal">Tap the teapot for a discussion prompt, then bring your answer to the WhatsApp chat (or argue about it with us there).</p>
         </div>
 
-        <div class="cup reveal">
+        <div class="index reveal">
+          <div class="index__card" aria-live="polite">
+            <span class="index__num" id="promptNum">q. 01</span>
+            <p class="index__text" id="promptText">Which letter would you have framed if it had been written to you?</p>
+          </div>
           <button class="teapot" id="teapot" aria-label="Pour a new question">
             <svg viewBox="0 0 160 120" aria-hidden="true">
               <path d="M38 48h72v22a36 36 0 0 1-36 36h0a36 36 0 0 1-36-36z" fill="var(--rose)"/>
@@ -156,21 +173,16 @@
               <ellipse cx="74" cy="48" rx="38" ry="7" fill="var(--berry)"/>
               <circle cx="74" cy="34" r="7" fill="var(--berry)"/>
               <path d="M54 76h40" stroke="var(--blush)" stroke-width="4" stroke-linecap="round" opacity=".7"/>
-              <path d="M64 86c4 4 16 4 20 0" stroke="var(--blush)" stroke-width="4" stroke-linecap="round" fill="none" opacity=".7"/>
             </svg>
-            <span>Pour</span>
+            <span>pour another ↻</span>
           </button>
-          <div class="prompt" aria-live="polite">
-            <span class="prompt__num" id="promptNum">01</span>
-            <p class="prompt__text" id="promptText">Which letter would you have framed if it had been written to you?</p>
-          </div>
         </div>
       </div>
 
-      <!-- How it works as stacked pills (nod to the palette) -->
+      <!-- How it works as stacked pills (a nod to the palette) -->
       <ol class="pills" aria-label="How the club works">
         <li class="pill pill--1 reveal"><b>01</b><span>Grab the book</span><small>any edition, any format, borrowed is cute</small></li>
-        <li class="pill pill--2 reveal" style="--d:.06s"><b>02</b><span>Brew something</span><small>this month: rose Earl Grey, the “Milena” blend</small></li>
+        <li class="pill pill--2 reveal" style="--d:.06s"><b>02</b><span>Brew something</span><small>this month: rose earl grey, the “Milena” blend</small></li>
         <li class="pill pill--3 reveal" style="--d:.12s"><b>03</b><span>Read &amp; annotate</span><small>tabs, underlines, little hearts in the margin</small></li>
         <li class="pill pill--4 reveal" style="--d:.18s"><b>04</b><span>Spill everything</span><small>online, in pyjamas, with every feeling you had</small></li>
       </ol>
@@ -178,47 +190,64 @@
 
     <!-- ───────── Mood board ───────── -->
     <section class="section mood" id="mood">
-      <header class="section__head">
-        <p class="eyebrow reveal">The mood</p>
+      <header class="mood__head">
+        <p class="label reveal">nº 03 — the mood</p>
         <h2 class="reveal">Candlelight, old paper<br />&amp; <em>a little heartbreak</em>.</h2>
       </header>
 
-      <div class="board">
-        <figure class="board__item board__item--tall reveal">
+      <div class="scrap">
+        <figure class="scrap__item scrap__collage polaroid reveal">
+          <span class="tape tape--l" aria-hidden="true"></span>
           <img src="assets/milena-collage.jpg" alt="Collage with moths, candles, old books, a teacup and a woman reading" loading="lazy" />
+          <figcaption>prague, 1920-ish</figcaption>
         </figure>
-        <figure class="board__item board__item--poster reveal" style="--d:.08s">
+
+        <figure class="scrap__item scrap__poster reveal" style="--d:.08s">
+          <span class="tape tape--r" aria-hidden="true"></span>
           <img src="assets/book-club-poster.jpg" alt="Book club poster: three hands clinking glasses of rosé under a pink disco ball" loading="lazy" />
         </figure>
-        <div class="board__item board__quote reveal" style="--d:.12s">
+
+        <div class="scrap__item scrap__typed reveal" style="--d:.12s">
           <p>“I am tired, I can't think of anything and want only to lay my face in your lap.”</p>
-          <span>— Kafka to Milena</span>
+          <span>— K. to M.</span>
         </div>
-        <figure class="board__item board__item--notes reveal" style="--d:.16s">
+
+        <figure class="scrap__item scrap__notes reveal" style="--d:.16s">
+          <span class="tape tape--top" aria-hidden="true"></span>
           <img src="assets/milena-notes.jpg" alt="Letters to Milena with handwritten notes: raw and intimate, sense of longing, love and loneliness" loading="lazy" />
         </figure>
-        <div class="board__item board__palette reveal" style="--d:.2s" aria-label="Club colour palette">
-          <span style="--c:#800021"></span><span style="--c:#881144"></span><span style="--c:#c2185b"></span><span style="--c:#c24366"></span><span style="--c:#ff69b4"></span><span style="--c:#ffe4d8"></span>
+
+        <div class="scrap__item chip reveal" style="--d:.2s" aria-label="Club colour palette">
+          <p class="chip__head">the palette</p>
+          <ul>
+            <li style="--c:#800021"><span>wine</span><code>800021</code></li>
+            <li style="--c:#881144"><span>berry</span><code>881144</code></li>
+            <li style="--c:#c2185b"><span>raspberry</span><code>c2185b</code></li>
+            <li style="--c:#c24366"><span>rose</span><code>c24366</code></li>
+            <li style="--c:#ff69b4"><span>pink</span><code>ff69b4</code></li>
+            <li style="--c:#ffe4d8" class="chip--light"><span>blush</span><code>ffe4d8</code></li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- ───────── Join ───────── -->
-    <section class="section join" id="join">
-      <div class="join__card reveal">
-        <div class="join__copy">
-          <p class="eyebrow eyebrow--light">An online book club</p>
+    <section class="join" id="join">
+      <div class="join__inner">
+        <div class="join__copy reveal">
+          <p class="label label--light">nº 04 — an online book club</p>
           <h2>Join the <em>club</em>.</h2>
           <p class="join__lede">No travel, no dress code. Read from your bed, your bath or your favourite café, and spill with us online.</p>
           <dl class="join__info">
-            <div><dt>Where</dt><dd>Online, from<br />anywhere</dd></div>
-            <div><dt>Pace</dt><dd>One book<br />a month</dd></div>
-            <div><dt>Cost</dt><dd>Free,<br />always ♡</dd></div>
+            <div><dt>where</dt><dd>Online, from anywhere</dd></div>
+            <div><dt>pace</dt><dd>One book a month</dd></div>
+            <div><dt>cost</dt><dd>Free, always ♡</dd></div>
           </dl>
         </div>
 
-        <div class="chat">
-          <p class="chat__title">Come sit with us, darling</p>
+        <div class="chat reveal" style="--d:.1s">
+          <span class="tape tape--l" aria-hidden="true"></span>
+          <p class="chat__title">come sit with us, darling</p>
           <p class="chat__text">The club lives in our WhatsApp group chat. That's where we share reading check-ins, drop discussion prompts and spill everything we're feeling.</p>
 
           <ul class="chat__bubbles" aria-hidden="true">
@@ -227,11 +256,11 @@
             <li class="bubble bubble--in">kettle's on, spill ☕️♡</li>
           </ul>
 
-          <a class="btn btn--whatsapp" href="https://chat.whatsapp.com/BWk0FZmihGW8D9kCHvEyLG" target="_blank" rel="noopener">
+          <a class="btn btn--wine" href="https://chat.whatsapp.com/BWk0FZmihGW8D9kCHvEyLG" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
-            Join the group chat
+            join the group chat
           </a>
-          <p class="chat__note">Opens WhatsApp · free to join · leave any time</p>
+          <p class="chat__note">opens whatsapp · free · leave any time</p>
         </div>
       </div>
     </section>
@@ -239,11 +268,12 @@
 
   <!-- ───────── Footer ───────── -->
   <footer class="footer">
-    <p class="footer__word" aria-hidden="true">Spill the Tea <span>&amp;</span> Read</p>
+    <p class="footer__sign" aria-hidden="true">with love &amp; tea,</p>
+    <p class="footer__word">Spill the Tea <i>&amp;</i> Read</p>
     <div class="footer__row">
-      <span>© 2026 Spill the Tea &amp; Read</span>
-      <span>Next month's pick revealed soon ♡</span>
-      <a href="#top">Back to top ↑</a>
+      <span>© 2026 spill the tea &amp; read</span>
+      <span>next month's pick revealed soon ♡</span>
+      <a href="#top">back to top ↑</a>
     </div>
   </footer>
 
