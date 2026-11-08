@@ -1,28 +1,37 @@
 // Spill the Tea & Read — small interactions
 
-// Nav: switch to light style once past the hero + mobile toggle
+// Header: solid once past the hero
 const nav = document.getElementById("nav");
-const navToggle = document.getElementById("navToggle");
-const navLinks = document.getElementById("navLinks");
 const hero = document.querySelector(".hero");
-
 const onScroll = () => {
-  nav.classList.toggle("is-scrolled", window.scrollY > hero.offsetHeight - 80);
+  nav.classList.toggle("is-scrolled", window.scrollY > hero.offsetHeight - 70);
 };
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
-const closeMenu = () => {
-  navLinks.classList.remove("is-open");
-  navToggle.setAttribute("aria-expanded", "false");
-  navToggle.textContent = "Menu";
+// Mobile menu
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+
+const setMenu = (open) => {
+  nav.classList.toggle("is-open", open);
+  burger.setAttribute("aria-expanded", open);
+  burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
 };
-navToggle.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("is-open");
-  navToggle.setAttribute("aria-expanded", open);
-  navToggle.textContent = open ? "Close" : "Menu";
+burger.addEventListener("click", (e) => {
+  e.stopPropagation();
+  setMenu(!nav.classList.contains("is-open"));
 });
-navLinks.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+document.addEventListener("click", (e) => {
+  if (nav.classList.contains("is-open") && !menu.contains(e.target)) setMenu(false);
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && nav.classList.contains("is-open")) {
+    setMenu(false);
+    burger.focus();
+  }
+});
 
 // Scroll reveal
 const io = new IntersectionObserver((entries) => {
@@ -50,7 +59,7 @@ const prompts = [
 ];
 let current = 0;
 const teapot = document.getElementById("teapot");
-const prompt = document.querySelector(".prompt");
+const card = document.querySelector(".index__card");
 const promptText = document.getElementById("promptText");
 const promptNum = document.getElementById("promptNum");
 
@@ -59,11 +68,11 @@ teapot.addEventListener("click", () => {
   do { next = Math.floor(Math.random() * prompts.length); } while (next === current);
   current = next;
   teapot.classList.add("is-pouring");
-  prompt.classList.add("is-swapping");
+  card.classList.add("is-swapping");
   setTimeout(() => {
     promptText.textContent = prompts[current];
-    promptNum.textContent = String(current + 1).padStart(2, "0");
-    prompt.classList.remove("is-swapping");
+    promptNum.textContent = "q. " + String(current + 1).padStart(2, "0");
+    card.classList.remove("is-swapping");
     teapot.classList.remove("is-pouring");
   }, 380);
 });
